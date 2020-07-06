@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"./sorting"
 	"./utils"
 )
 
@@ -11,6 +12,7 @@ func main() {
 	var size int                 // size of the array
 	var isRandomGenerated string // 'y' or 'n'. if 'y' populate array with random numbers
 	var arr []int64
+	var sortAlgorithm int
 
 	fmt.Print("Please Enter the size of the array: ")
 	fmt.Scan(&size)
@@ -30,7 +32,18 @@ func main() {
 		fmt.Println("You had to type 'N' or 'Y'")
 	}
 
-	fmt.Println(arr)
+	fmt.Println("1- BubbleSort\n2- SelectionSort")
+	fmt.Print("Please select the sorting algoritm: ")
+	fmt.Scan(&sortAlgorithm)
+
+	fmt.Println("Not Sorted: ", arr)
+	switch sortAlgorithm {
+	case 1:
+		sorting.BubbleSort(&arr, size)
+	case 2:
+		sorting.SelectionSort(&arr, size)
+	}
+	fmt.Println("Sorted:     ", arr)
 }
 
 func setRandom(arr *[]int64, size int) {
