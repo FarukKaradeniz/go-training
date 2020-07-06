@@ -25,7 +25,7 @@ func main() {
 	if isRandomGenerated == "y" || isRandomGenerated == "Y" {
 		setRandom(&arr, size)
 	} else if isRandomGenerated == "n" || isRandomGenerated == "N" {
-		setManuel(&arr, size)
+		setManual(&arr, size)
 	} else {
 		fmt.Println("You had to type 'N' or 'Y'")
 	}
@@ -40,7 +40,7 @@ func setRandom(arr *[]int64, size int) {
 	}
 }
 
-func setManuel(arr *[]int64, size int) {
+func setManual(arr *[]int64, size int) {
 	var value int64
 	for i := 0; i < size; i++ {
 		fmt.Print("Please Enter the ", (i + 1), ". value: ")
