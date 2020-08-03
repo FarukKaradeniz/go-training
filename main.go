@@ -37,7 +37,7 @@ func main() {
 		panic("You had to type 'N' or 'Y'")
 	}
 
-	fmt.Println("1- BubbleSort\n2- SelectionSort")
+	fmt.Println("1- BubbleSort\n2- SelectionSort\n3- MergeSort")
 	fmt.Print("Please select the sorting algoritm: ")
 	_, errAlgorithmPick := fmt.Scan(&sortAlgorithm)
 	if nil != errAlgorithmPick {
@@ -50,6 +50,8 @@ func main() {
 		sorting.BubbleSort(&arr)
 	case 2:
 		sorting.SelectionSort(&arr)
+	case 3:
+		sorting.MergeSort(&arr)
 	}
 	fmt.Println("Sorted:     ", arr)
 }
