@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"./sorting"
-	"./utils"
+	"go-training/sorting"
+	"go-training/utils"
 )
 
 func main() {
