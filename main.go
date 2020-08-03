@@ -15,11 +15,16 @@ func main() {
 	var sortAlgorithm int
 
 	fmt.Print("Please Enter the size of the array: ")
-	fmt.Scan(&size)
-	//	_, errSize := fmt.Scan(&size)
+	_, errSize := fmt.Scan(&size)
+	if nil != errSize {
+		panic("invalid input")
+	}
 
 	fmt.Print("Please type 'y' if you want to populate array with random numbers, type 'n' if you want to assign all the values: ")
-	fmt.Scan(&isRandomGenerated)
+	_, errGen := fmt.Scan(&isRandomGenerated)
+	if nil != errGen {
+		panic("invalid input")
+	}
 
 	// TODO Ask repeatedly to user if inputs are invalid
 	arr = utils.CreateArray(size)
@@ -29,12 +34,15 @@ func main() {
 	} else if isRandomGenerated == "n" || isRandomGenerated == "N" {
 		setManual(&arr, size)
 	} else {
-		fmt.Println("You had to type 'N' or 'Y'")
+		panic("You had to type 'N' or 'Y'")
 	}
 
 	fmt.Println("1- BubbleSort\n2- SelectionSort")
 	fmt.Print("Please select the sorting algoritm: ")
-	fmt.Scan(&sortAlgorithm)
+	_, errAlgorithmPick := fmt.Scan(&sortAlgorithm)
+	if nil != errAlgorithmPick {
+		panic("invalid input")
+	}
 
 	fmt.Println("Not Sorted: ", arr)
 	switch sortAlgorithm {
@@ -56,8 +64,12 @@ func setRandom(arr *[]int64, size int) {
 func setManual(arr *[]int64, size int) {
 	var value int64
 	for i := 0; i < size; i++ {
-		fmt.Print("Please Enter the ", (i + 1), ". value: ")
-		fmt.Scan(&value)
+		fmt.Print("Please Enter the ", i+1, ". value: ")
+		_, errValue := fmt.Scan(&value)
+		if nil != errValue {
+			panic("invalid error")
+		}
+
 		utils.SetValueAtIndex(arr, i, value)
 	}
 }
