@@ -47,9 +47,9 @@ func main() {
 	fmt.Println("Not Sorted: ", arr)
 	switch sortAlgorithm {
 	case 1:
-		sorting.BubbleSort(&arr, size)
+		sorting.BubbleSort(&arr)
 	case 2:
-		sorting.SelectionSort(&arr, size)
+		sorting.SelectionSort(&arr)
 	}
 	fmt.Println("Sorted:     ", arr)
 }
