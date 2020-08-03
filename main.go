@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World")
 	var size int                 // size of the array
 	var isRandomGenerated string // 'y' or 'n'. if 'y' populate array with random numbers
 	var arr []int64
@@ -40,7 +39,7 @@ func main() {
 	fmt.Println("Not Sorted: ", arr)
 
 	fmt.Println("1- BubbleSort\n2- SelectionSort\n3- MergeSort")
-	fmt.Print("Please select the sorting algoritm: ")
+	fmt.Print("Please select the sorting algorithm: ")
 	_, errAlgorithmPick := fmt.Scan(&sortAlgorithm)
 	if nil != errAlgorithmPick {
 		panic("invalid input")
