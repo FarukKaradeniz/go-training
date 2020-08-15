@@ -38,7 +38,7 @@ func main() {
 
 	fmt.Println("Not Sorted: ", arr)
 
-	fmt.Println("1- BubbleSort\n2- SelectionSort\n3- MergeSort")
+	fmt.Println("1- BubbleSort\n2- SelectionSort\n3- MergeSort\n4- QuickSort")
 	fmt.Print("Please select the sorting algorithm: ")
 	_, errAlgorithmPick := fmt.Scan(&sortAlgorithm)
 	if nil != errAlgorithmPick {
@@ -52,6 +52,8 @@ func main() {
 		sorting.SelectionSort(&arr)
 	case 3:
 		sorting.MergeSort(&arr)
+	case 4:
+		sorting.QuickSort(&arr)
 	}
 	fmt.Println("Sorted:     ", arr)
 }
