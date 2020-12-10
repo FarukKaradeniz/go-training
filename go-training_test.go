@@ -1,13 +1,13 @@
 package main
 
 import (
-	"go-training/sorting"
-	"go-training/utils"
+	"github.com/FarukKaradeniz/go-training/sorting"
+	"github.com/FarukKaradeniz/go-training/utils"
 	"testing"
 )
 
 func createRandomArray() []int64 {
-	var size = 10
+	var size = 10000
 	arr := make([]int64, size)
 	for i := 0; i < size; i++ {
 		var randNumber = utils.GetRandomNumberBetween(1, 50)
