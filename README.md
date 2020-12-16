@@ -11,10 +11,6 @@ To run the application:
 docker run -it farukkaradeniz/go-training
 ``
 
-To run the tests:
-``
-docker run farukkaradeniz/go-training sh -c "go test"
-``
 
 ## TODO
 
